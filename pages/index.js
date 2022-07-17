@@ -5,6 +5,7 @@ import Footer from "@components/Footer";
 import { getProductList } from "@api/getProductList";
 
 export default function Home({ products }) {
+  const products = await getProductList();
   return (
     <>
       <Head>
@@ -16,9 +17,6 @@ export default function Home({ products }) {
       <main>
         <ul className="product-grid">
         <li>no comments? and no product js file?</li>
-        {products.map((p, index) => {
-          return "<ProductListing key={`product${index}`} product={p.node} />";
-        })}
         </ul>
       </main>
 
