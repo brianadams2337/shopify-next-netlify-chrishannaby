@@ -15,11 +15,21 @@ export default function Home({ products }) {
       <Header />
       <main>
         <ul className="product-grid">
-        <li>no comments? and no [product].js file?</li>
+        <li>no comments? and no product js file?</li>
         </ul>
       </main>
 
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const products = await getProductList();
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
