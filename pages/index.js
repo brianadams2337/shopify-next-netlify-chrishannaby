@@ -16,6 +16,9 @@ export default function Home({ products }) {
       <main>
         <ul className="product-grid">
         <li>testing</li>
+          // {products.map((p, index) => {
+          //   return <ProductListing key={`product${index}`} product={p.node} />;
+          // })}
         </ul>
       </main>
 
