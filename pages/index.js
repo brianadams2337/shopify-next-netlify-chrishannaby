@@ -15,7 +15,7 @@ export default function Home({ products }) {
       <Header />
       <main>
         <ul className="product-grid">
-        <li>no comments?</li>
+        <li>no comments? and no [product].js file?</li>
         </ul>
       </main>
 
