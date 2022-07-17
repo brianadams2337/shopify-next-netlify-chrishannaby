@@ -26,12 +26,12 @@ export default function Home({ products }) {
   );
 }
 
-export async function getStaticProps() {
-  const products = await getProductList();
-
-  return {
-    props: {
-      products,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const products = await getProductList();
+//
+//   return {
+//     props: {
+//       products,
+//     },
+//   };
+// }
