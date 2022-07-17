@@ -15,7 +15,10 @@ export default function Home({ products }) {
       <Header />
       <main>
         <ul className="product-grid">
-          test
+        <li>testing</li>
+          // {products.map((p, index) => {
+          //   return <ProductListing key={`product${index}`} product={p.node} />;
+          // })}
         </ul>
       </main>
 
@@ -23,3 +26,13 @@ export default function Home({ products }) {
     </>
   );
 }
+
+// export async function getStaticProps() {
+//   const products = await getProductList();
+//
+//   return {
+//     props: {
+//       products,
+//     },
+//   };
+// }
