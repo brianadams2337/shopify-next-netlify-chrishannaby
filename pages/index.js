@@ -5,7 +5,7 @@ import Footer from "@components/Footer";
 import { getProductList } from "@api/getProductList";
 
 export default function Home({ products }) {
-  const products = await getProductList();
+  const products = 'what';
   return (
     <>
       <Head>
