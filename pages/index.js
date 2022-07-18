@@ -4,6 +4,16 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import { getProductList } from "@api/getProductList";
 
+export async function getStaticProps() {
+  const products = await getProductList();
+
+  return {
+    props: {
+      products,
+    },
+  };
+}
+
 export default function Home({ products }) {
   return (
     <>
