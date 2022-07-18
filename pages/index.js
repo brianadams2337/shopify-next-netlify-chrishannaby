@@ -4,16 +4,6 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import { getProductList } from "@api/getProductList";
 
-export async function getStaticProps() {
-  const products = await getProductList();
-
-  return {
-    props: {
-      products,
-    },
-  };
-}
-
 export default function Home({ products }) {
   return (
     <>
@@ -26,7 +16,6 @@ export default function Home({ products }) {
       <main>
         <ul className="product-grid">
         <li>no comments? and no product js file?</li>
-        {products.map()}
         </ul>
       </main>
 
@@ -34,3 +23,5 @@ export default function Home({ products }) {
     </>
   );
 }
+
+export async function getStaticProps() {}
