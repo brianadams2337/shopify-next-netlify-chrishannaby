@@ -53,6 +53,7 @@ exports.getProductList = async () => {
 
     return shopifyResponse.products.edges;
   } catch (error) {
-    console.log(error);
+    data = Array.from(error);
+    return data;
   }
 };
