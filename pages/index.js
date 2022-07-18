@@ -15,7 +15,9 @@ export default function Home({ products }) {
       <Header />
       <main>
         <ul className="product-grid">
-        <li>no comments? and no product js file?</li>
+          {products.map((p, index) => {
+            return <ProductListing key={`product${index}`} product={p.node} />;
+          })}
         </ul>
       </main>
 
@@ -25,4 +27,18 @@ export default function Home({ products }) {
 }
 
 export async function getStaticProps() {
+  let products = await fetch(
+    `${process.env.NETLIFY_URL}/.netlify/functions/get-product-list`
+  )
+    .then((res) => res.json())
+    .then((response) => {
+      console.log('--- built home page ---');
+      return response.products.edges;
+    });
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
