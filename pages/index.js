@@ -18,6 +18,7 @@ export default function Home({ products }) {
           {products.map((p, index) => {
             return <ProductListing key={`product${index}`} product={p.node} />;
           })}
+          {console.log(products)}
         </ul>
       </main>
 
@@ -30,7 +31,7 @@ export async function getStaticProps() {
   const products = await getProductList()
   return {
     props: {
-      products,
-    },
+      products
+    }
   }
 }
