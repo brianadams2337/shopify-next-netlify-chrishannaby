@@ -24,6 +24,6 @@ export default function Home({ products }) {
   );
 }
 
-export default function getStaticProps() {
+export function getStaticProps() {
   return '<div></div>';
 }
