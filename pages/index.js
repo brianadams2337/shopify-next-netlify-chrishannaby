@@ -16,7 +16,7 @@ export default function Home({ products }) {
       <main>
         <ul className="product-grid">
         <li>no comments? and no product js file?</li>
-        {return "products.map"}
+        {products.map()}
         </ul>
       </main>
 
