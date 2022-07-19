@@ -1,13 +1,12 @@
 const fetch = require("node-fetch");
-    console.log('sdfsd');
 exports.postToShopify = async ({ query, variables }) => {
   try {
-    const result = await fetch(process.env.SHOPIFY_API_ENDPOINT, {
+    const result = await fetch("https://brianadams-netlify.myshopify.com/api/unstable/graphql.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-Shopify-Storefront-Access-Token":
-          process.env.SHOPIFY_STOREFRONT_API_TOKEN,
+          "3027c9c730ca4fe71c3c062005011fb8",
       },
       body: JSON.stringify({ query, variables }),
     }).then((res) => res.json());
