@@ -18,7 +18,6 @@ export default function Home({ products }) {
           {products.map((p, index) => {
             return <ProductListing key={`product${index}`} product={p.node} />;
           })}
-          {console.log(process)}
         </ul>
       </main>
 
