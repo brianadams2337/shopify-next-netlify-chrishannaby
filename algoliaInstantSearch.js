@@ -17,7 +17,7 @@ function Hit({ hit }) {
     <article>
       <li className="product-card">
         <div className="product-card-frame">
-          <img className="prodimg" src={hit.image} alt={hit.image} />
+          <img className="prodimg" src={hit.img} alt={hit.image} />
         </div>
         <div className="product-card-text">
           <h3 className="product-card-title">{hit.title}</h3>
@@ -36,7 +36,6 @@ function AlgoliaApp() {
   return (
     <InstantSearch searchClient={searchClient} indexName="netlify_c172167d-17aa-494c-bf94-273fd3ef5be0_main_all">
       <SearchBox />
-      <Hits hitComponent={Hit} />
       <Hits />
       <Pagination />
     </InstantSearch>
