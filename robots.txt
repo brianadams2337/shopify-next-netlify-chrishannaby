@@ -1,3 +1,7 @@
 User-agent: Algolia Crawler
 Disallow: /
-Disallow: /cart
+Allow: /product/
+
+User-agent: *
+Disallow: /
+Allow: /product/
