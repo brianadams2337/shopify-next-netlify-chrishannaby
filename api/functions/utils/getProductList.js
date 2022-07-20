@@ -53,72 +53,7 @@ exports.getProductList = async () => {
 
     return shopifyResponse.products.edges;
   } catch (error) {
-    const msg = Array.from([
-        {
-          "node": {
-            "id": "gid://shopify/Product/1974238216214",
-            "handle": "aged-wood-dress-1",
-            "description": "",
-            "title": "Aged Steel Dress",
-            "totalInventory": 10,
-            "variants": {
-              "edges": [
-                {
-                  "node": {
-                    "id": "gid://shopify/ProductVariant/19523153133590",
-                    "title": "Default Title"
-                  }
-                }
-              ]
-            },
-            "priceRange": {
-              "maxVariantPrice": {
-                "amount": "0.0",
-                "currencyCode": "CAD"
-              },
-              "minVariantPrice": {
-                "amount": "0.0",
-                "currencyCode": "CAD"
-              }
-            },
-            "images": {
-              "edges": [{"node": {}}]
-            }
-          }
-        },
-        {
-          "node": {
-            "id": "gid://shopify/Product/1974238216214",
-            "handle": "aged-wood-dress-1",
-            "description": "",
-            "title": "Aged test Dress",
-            "totalInventory": 10,
-            "variants": {
-              "edges": [
-                {
-                  "node": {
-                    "id": "gid://shopify/ProductVariant/19523153133590",
-                    "title": "Default Title"
-                  }
-                }
-              ]
-            },
-            "priceRange": {
-              "maxVariantPrice": {
-                "amount": "0.0",
-                "currencyCode": "CAD"
-              },
-              "minVariantPrice": {
-                "amount": "0.0",
-                "currencyCode": "CAD"
-              }
-            },
-            "images": {
-              "edges": [{"node": {}}]
-            }
-          }
-        }
-      ]);
+    const msg = Array.from(error);
     return msg;
   }
 };
