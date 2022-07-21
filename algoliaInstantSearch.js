@@ -1,30 +1,35 @@
-import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits, Highlight, RefinementList, Pagination } from 'react-instantsearch-dom';
-// import { InstantSearch, SearchBox, Hits, Highlight, RefinementList } from 'react-instantsearch-hooks-web';
+import React from 'react';
 import Link from 'next/link';
+import algoliasearch from 'algoliasearch/lite';
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Pagination,
+  Highlight,
+  ClearRefinements,
+  RefinementList,
+  Configure,
+} from 'react-instantsearch-hooks-web';
+import { connectStateResults, searchState } from 'react-instantsearch-dom';
+
+const StateResults = ( searchState ) => (
+  <div>
+    The query typed is <q>{searchState.query}</q>
+  </div>
+);
+
+const CustomStateResults = connectStateResults({ searchState });
 
 const searchClient = algoliasearch('F45D81JRIB', '7d8c3febdbeccf1bcde9076b24ca9041');
-
-// const AlgoliaApp = () => (
-//   <InstantSearch searchClient={searchClient} indexName="netlify_c172167d-17aa-494c-bf94-273fd3ef5be0_main_all">
-//     <SearchBox />
-//     <Hits />
-//   </InstantSearch>
-// );
 
 function Hit({ hit }) {
   return (
     <article>
       <li className="product-card">
-        <div className="product-card-frame">
-          <img className="prodimg" src={hit.img} alt={hit.image} />
-        </div>
-        <div className="product-card-text">
-          <h3 className="product-card-title">{hit.title}</h3>
-        </div>
         <Link href={hit.origin + hit.url}>
           <a>
-            <button>View Item {`>`} </button>
+            <h3 className="product-card-title">{hit.title}</h3>
           </a>
         </Link>
       </li>
@@ -34,12 +39,18 @@ function Hit({ hit }) {
 
 function AlgoliaApp() {
   return (
-    <InstantSearch searchClient={searchClient} indexName="netlify_c172167d-17aa-494c-bf94-273fd3ef5be0_main_all">
-      <SearchBox />
-      <Hits />
-      <Pagination />
+    <InstantSearch indexName="netlify_c172167d-17aa-494c-bf94-273fd3ef5be0_main_all" searchClient={searchClient} searchState={searchState}>
+      <div className="left-panel">
+        <h2>Search All Products</h2>
+        <SearchBox />
+        <Configure hitsPerPage={3} />
+        <StateResults />
+        <Hits hitComponent={Hit} />
+        <Pagination />
+      </div>
     </InstantSearch>
   );
 }
+
 
 export { AlgoliaApp }
