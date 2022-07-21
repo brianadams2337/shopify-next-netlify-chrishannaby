@@ -24,9 +24,9 @@ body {
 h1,
 h2,
 h3 {
-  font-family: Domine, 'PT Serif', -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Helvetica Neue, Arial, sans-serif;
-  font-weight: 400;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
 h1 {
   font-size: 2.5rem;
@@ -84,7 +84,7 @@ input {
   color: #d96528;
 }
 .main-nav {
-  width: 80vw;
+  width: 90vw;
   margin-top: 30px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -150,10 +150,21 @@ input {
   align-items: center;
   flex-direction: column;
   color: #fff;
+  font-weight: bold;
 }
+
+main .testimonial {
+  width: 100%;
+  height: 280px;
+  background: url(https://www.lifefitness.com/resource/image/1577926/landscape_ratio8x3/1560/585/5390497ec2497e75ebe0b05e3d699499/Kb/run-cx-treadmill-life-fitness-man-running-stride-edited-final-2000x1300.jpg) 50% no-repeat;
+  margin: 0 0 40px 0;
+}
+
 .testimonial h2 {
   padding: 0 30px;
   text-align: center;
+  font-size: 36px;
+  text-shadow: 0px 0px 5px #000000;
 }
 .project-credit {
   width: 100%;
@@ -292,8 +303,7 @@ input {
   font-size: 1.2rem;
   margin: 5px 0;
   font-weight: 400;
-  font-family: Domine, 'PT Serif', -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Helvetica Neue, Arial, sans-serif;
+  font-family: Helvetica Neue, Arial, sans-serif;
 }
 .product-page-price-list,
 .product-page-price.is-solo {
@@ -306,11 +316,12 @@ input {
   display: flex;
 }
 main {
-  margin: 30px 0 45px;
+  width: 90vw;
+  margin: 30px auto 45px;
 }
 .product-grid {
   max-width: 60vw;
-  margin: 0 auto;
+  margin: 20px auto 40px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -371,4 +382,12 @@ main {
 .product-card-title {
   margin: 0.5rem 0;
   font-weight: 700;
+}
+
+.ais-Hits {
+  width: 90vw;
+}
+
+.ais-SearchBox {
+  margin-top: 20px;
 }

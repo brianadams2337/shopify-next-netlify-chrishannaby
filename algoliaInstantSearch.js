@@ -41,12 +41,9 @@ function AlgoliaApp() {
   return (
     <InstantSearch indexName="netlify_c172167d-17aa-494c-bf94-273fd3ef5be0_main_all" searchClient={searchClient} searchState={searchState}>
       <div className="left-panel">
-        <h2>Search All Products</h2>
         <SearchBox />
         <Configure hitsPerPage={3} />
-        <StateResults />
         <Hits hitComponent={Hit} />
-        <Pagination />
       </div>
     </InstantSearch>
   );

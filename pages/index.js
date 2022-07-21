@@ -18,13 +18,32 @@ export default function Home({ products }) {
 
       <Header />
       <main>
-      <AlgoliaApp />
+
+      <section className="testimonial">
+        <h2>
+          UPGRADE YOUR HOME WORKOUTS
+        </h2>
+        <p>The New Run CX Treadmill</p>
+        <a href="/product/run-cx"><button>View Item &gt; </button></a>
+      </section>
+
+      <h2>
+        FEATURED PRODUCTS
+      </h2>
 
         <ul className="product-grid">
           {products.map((p, index) => {
             return <ProductListing key={`product${index}`} product={p.node} />;
           })}
         </ul>
+
+        <h2>
+          SEARCH THE CATALOG
+        </h2>
+
+
+        <AlgoliaApp />
+
       </main>
 
       <Footer />

@@ -5,7 +5,7 @@ exports.getProductList = async () => {
     const shopifyResponse = await postToShopify({
       query: `
         query getProductList {
-          products(sortKey: TITLE, first: 100) {
+          products(sortKey: ID, first: 4) {
             edges {
               node {
                 id

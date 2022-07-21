@@ -8,7 +8,7 @@ export default function ProductPage({ product }) {
   return (
     <div className="container">
       <Head>
-        <title>Shoperoni | Buy {product.node.title}</title>
+        <title>Life Fitness | Buy {product.node.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
