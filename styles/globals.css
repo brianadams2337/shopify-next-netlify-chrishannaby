@@ -320,7 +320,6 @@ main {
   margin: 30px auto 45px;
 }
 .product-grid {
-  max-width: 60vw;
   margin: 20px auto 40px;
   display: grid;
   grid-template-columns: 1fr;

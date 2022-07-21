@@ -24,7 +24,7 @@ export default function Home({ products }) {
           UPGRADE YOUR HOME WORKOUTS
         </h2>
         <p>The New Run CX Treadmill</p>
-        <a href="/product/run-cx"><button>View Item &gt; </button></a>
+        <a href="/product/run-cx-treadmill"><button>View Item &gt; </button></a>
       </section>
 
       <h2>
