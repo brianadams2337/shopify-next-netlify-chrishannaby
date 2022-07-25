@@ -19,15 +19,13 @@ const StateResults = ( searchState ) => (
   </div>
 );
 
-const CustomStateResults = connectStateResults({ searchState });
-
 const searchClient = algoliasearch('F45D81JRIB', '7d8c3febdbeccf1bcde9076b24ca9041');
 
 function Hit({ hit }) {
   return (
     <article>
       <li className="product-card">
-        <Link href={hit.origin + hit.url}>
+        <Link href={hit.url}>
           <a>
             <h3 className="product-card-title">{hit.title}</h3>
           </a>
@@ -42,8 +40,10 @@ function AlgoliaApp() {
     <InstantSearch indexName="netlify_c172167d-17aa-494c-bf94-273fd3ef5be0_main_all" searchClient={searchClient} searchState={searchState}>
       <div className="left-panel">
         <SearchBox />
+        <StateResults />
         <Configure hitsPerPage={3} />
         <Hits hitComponent={Hit} />
+        <Hits />
       </div>
     </InstantSearch>
   );

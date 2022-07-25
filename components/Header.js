@@ -8,6 +8,7 @@ export default function Header() {
           <a><img src="https://www.lifefitness.com/resource/crblob/1164/260e4ad4ec1b7642864fbe5a149d147c/logo-svg-data.svg" altText="Life Fitness"/></a>
         </Link>
       </h1>
+      <div id="algoliaSearchBox"></div>
       <nav className="main-nav">
         <ul>
           <li className="main-nav-item">
