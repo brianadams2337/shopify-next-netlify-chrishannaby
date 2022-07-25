@@ -100,7 +100,7 @@ export default function ProductPageContent({ product }) {
         <h1>{product.title}</h1>
         <h2>{cost}</h2>
         <p>{product.description}</p>
-
+        <span class="label">Quantity:</span>
         <VariantForm
           vars={vars}
           current={chosenVariant}
