@@ -28,9 +28,15 @@ export default function Header() {
             <Link href="/boards"><a>Boards</a></Link>
           </li> */}
           <li className="main-nav-item">
-            <Link href="/cart">
-              <a className="cart cartLink">Shopping Cart<span class="badge">{ count }</span></a>
-            </Link>
+            { count > 0 ? (
+              <Link href="/cart">
+                <a className="cart cartLink">Shopping Cart<span class="badge">{ count }</span></a>
+              </Link>
+            ) : (
+              <Link href="/cart">
+                <a className="cart cartLink">Shopping Cart</a>
+              </Link>
+            ) }
           </li>
         </ul>
       </nav>
