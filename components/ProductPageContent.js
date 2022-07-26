@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { formatPrice } from "../utilityFunctions";
 import { useAppContext } from "../state";
+import { useGlobalState, setGlobalState } from '@components/CartPreview';
+import { udpateCartItemsCount } from '@components/CartPreview';
 
 function getCurrentVariantObject(vars, id) {
   return vars.filter((v) => {
@@ -47,6 +49,8 @@ function VariantForm({ vars, current, pick, setQ }) {
 
 export default function ProductPageContent({ product }) {
   let vars = product.variants.edges;
+  let [count, setCount] = useGlobalState('count');
+
 
   // Chosen variant ID
   const [chosenVariant, setChosenVariant] = useState(vars[0].node.id);
@@ -80,10 +84,15 @@ export default function ProductPageContent({ product }) {
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
     });
+
     console.log('res', cartResponse);
+    const c = [{"node": {"quantity": 1}}, {"node": {"quantity": 6}}, {"node": {"quantity": 1}}, {"node": {"quantity": 17}}]
+
+
     const data = await cartResponse.json();
+    setCount(count = udpateCartItemsCount(data));
+
     setCartId(data.id);
-    console.log(data);
     return data;
   };
 
