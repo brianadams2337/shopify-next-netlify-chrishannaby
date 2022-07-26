@@ -51,7 +51,6 @@ export default function ProductPageContent({ product }) {
   let vars = product.variants.edges;
   let [count, setCount] = useGlobalState('count');
 
-
   // Chosen variant ID
   const [chosenVariant, setChosenVariant] = useState(vars[0].node.id);
   // Quantity of the chosen variant
@@ -85,16 +84,11 @@ export default function ProductPageContent({ product }) {
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log('res', cartResponse);
-    const c = [{"node": {"quantity": 1}}, {"node": {"quantity": 6}}, {"node": {"quantity": 1}}, {"node": {"quantity": 17}}]
-
-    console.log('c', c);
     const data = await cartResponse.json();
-    console.log('data1', data);
-    setCount(count = udpateCartItemsCount(data.lines.edges));
-    console.log('data2', data);
 
     setCartId(data.id);
+    setCount(count = udpateCartItemsCount(data.lines.edges));
+
     return data;
   };
 

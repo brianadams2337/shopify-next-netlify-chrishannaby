@@ -1,6 +1,9 @@
 import { formatPrice, itemTotal } from "../utilityFunctions";
+import { useGlobalState, setGlobalState } from '@components/CartPreview';
+import { udpateCartItemsCount } from '@components/CartPreview';
 
 export default function CartTable({ cartItems, cartId, removeItem }) {
+  let [count, setCount] = useGlobalState('count');
   let removeItemFromCart = (itemId) => {
     fetch("/.netlify/functions/remove-from-cart", {
       method: "POST",
@@ -14,6 +17,9 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
         console.log("--- Item deleted ---");
 
         removeItem(response.lines.edges);
+
+        setCount(count = udpateCartItemsCount(response.lines.edges));
+
         return response;
       });
   };
