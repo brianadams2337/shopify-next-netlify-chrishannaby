@@ -80,7 +80,7 @@ export default function ProductPageContent({ product }) {
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
     });
-
+    console.log(cartResponse);
     const data = await cartResponse.json();
     setCartId(data.id);
 
