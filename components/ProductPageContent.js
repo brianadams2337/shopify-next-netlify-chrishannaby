@@ -91,7 +91,7 @@ export default function ProductPageContent({ product }) {
     console.log('c', c);
     const data = await cartResponse.json();
     console.log('data1', data);
-    setCount(count = udpateCartItemsCount(data));
+    setCount(count = udpateCartItemsCount(data.lines.edges));
     console.log('data2', data);
 
     setCartId(data.id);
