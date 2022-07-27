@@ -38,14 +38,6 @@ export default function Cart() {
       const jsonCheckoutURL = await checkoutResponse.json();
       const json = await response.json();
 
-      console.log('checkout resp', checkoutResponse);
-      console.log('checkout resp', jsonCheckoutURL);
-
-      console.log('resp', response);
-      console.log('resp', json);
-
-      console.log(localCart);
-
       setCheckoutURL(jsonCheckoutURL?.cart?.checkoutUrl);
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
@@ -71,7 +63,7 @@ export default function Cart() {
         </div>
       ) : (
         <div className="cart-page-message">
-          Your Cart is empty.
+          There are no items in your cart.
         </div>
       )}
     </div>

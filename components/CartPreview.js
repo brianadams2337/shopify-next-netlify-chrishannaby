@@ -6,7 +6,6 @@ function udpateCartItemsCount (arr) {
   let sum = 0
   arr.forEach((e)=>{
     sum = sum + e["node"]["quantity"]
-    console.log(sum)
   })
   return sum
 }

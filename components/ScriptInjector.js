@@ -33,7 +33,6 @@ function ScriptInjector() {
 			};
 		}
 	});
-console.log('tewre');
 	return null;
 }
 

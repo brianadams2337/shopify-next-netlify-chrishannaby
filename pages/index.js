@@ -13,7 +13,7 @@ export default function Home({ products }) {
         <title>Fitness & Exercise Equipment for Your Facility or Home</title>
         <link rel="icon" href="/favicon.ico" />
         /** Algolia **/
-        <script type="text/javascript" async src={`https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js?v=${process.env.ALGOLIA_APP_ID}`} />
+        <script type="text/javascript" async src={`https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js`} />
         <script type="text/javascript">
           var myObj = new Object();
           myObj.appId = 'F45D81JRIB';

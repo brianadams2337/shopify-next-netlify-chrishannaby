@@ -38,6 +38,7 @@ a,
 a:active,
 a:visited {
   color: #d96528;
+  font-size: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
