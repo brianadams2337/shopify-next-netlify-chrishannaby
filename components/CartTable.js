@@ -59,13 +59,9 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
                 {itemTotal(item.merchandise.priceV2, item.quantity)}
               </td>
               <td className="cart-table-cell">
-                <button
-                  onClick={() => {
-                    removeItemFromCart(item.id);
-                  }}
-                >
-                  Remove Item
-                </button>
+                <a onClick={() => {removeItemFromCart(item.id);}}>
+                  Remove
+                </a>
               </td>
             </tr>
           );
