@@ -30,11 +30,13 @@ export default function Cart() {
         }),
         headers: { "Content-Type": "application/json" },
       });
+      const json = await response.json();
       console.log('checkout resp', checkresponse);
+      console.log('cart resp', response);
+      console.log('cart json', json);
       const jsoncheckout = await checkresponse.json();
       console.log('checkout json', jsoncheckout);
 
-      const json = await response.json();
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
       return json;
