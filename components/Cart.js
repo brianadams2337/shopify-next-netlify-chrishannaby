@@ -28,7 +28,8 @@ export default function Cart() {
         body: JSON.stringify({
           cartId: localCart,
         }),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin" : "*",
+"Access-Control-Allow-Credentials" : true },
       });
       const json = await response.json();
       console.log('checkout resp', checkresponse);
