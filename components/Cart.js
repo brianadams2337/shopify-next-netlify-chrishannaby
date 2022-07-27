@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState, useEffect } from "react";
 import { useAppContext } from "../state";
 import CartTable from "./CartTable";
@@ -62,6 +63,11 @@ export default function Cart() {
             removeItem={setProducts}
           />
           <CartTotal cost={cost} />
+          <Link href={checkoutURL}>
+            <a>
+              <button>Go to checkout</button>
+            </a>
+          </Link>
           <a href={checkoutURL}>Go to checkout</a>
         </div>
       ) : (
