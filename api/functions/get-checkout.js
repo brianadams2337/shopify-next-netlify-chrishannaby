@@ -28,12 +28,9 @@ exports.handler = async (event) => {
     console.log("--------------------------------");
     const shopifyResponse = await postToShopify({
       query: `
-        query {
-          node(id: $cartId ) {
-            ... on Checkout {
-              id
-              webUrl
-            }
+        query checkoutURL {
+          cart(id: $cartId) {
+            checkoutUrl
           }
         }
        `,

@@ -66,7 +66,6 @@ exports.handler = async (event) => {
       itemId,
       quantity,
     });
-    console.log(createCartResponse);
     return {
       statusCode: 200,
       body: JSON.stringify(createCartResponse.cartCreate.cart),
