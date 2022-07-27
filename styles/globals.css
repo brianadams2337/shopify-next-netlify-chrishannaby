@@ -35,12 +35,18 @@ p {
   margin: 20px 0;
 }
 a,
-a:active,
 a:visited {
   color: #d96528;
   font-size: 12px;
-  text-decoration: none;
+  text-decoration: underline;
   transition: all 0.3s ease;
+}
+a:hover,
+a:active {
+  color: #d96528;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
 }
 button {
   border: 1px solid #ccc;
