@@ -41,10 +41,11 @@ export default function Cart() {
       console.log(localCart);
 
 
+      const jsonCheck = await checkoutResponse.json();
       const json = await response.json();
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
-      return [json, ];
+      return [json, jsonCheck];
     }
   }, []);
 
