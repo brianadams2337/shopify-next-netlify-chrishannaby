@@ -32,8 +32,10 @@ export default function Cart() {
       });
       console.log('checkout resp', checkresponse);
       console.log('checkout resp', checkresponse.data);
-      console.log('checkout resp', checkresponse.cart);
-      console.log('checkout resp', checkresponse.url);
+      console.log('checkout resp', checkresponse.body);
+      console.log('resp', response);
+      console.log('resp', response.data);
+      console.log('resp', response.body);
 
       const json = await response.json();
 
