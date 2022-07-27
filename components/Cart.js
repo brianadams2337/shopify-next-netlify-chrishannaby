@@ -7,10 +7,11 @@ export default function Cart() {
   const [showProducts, setShowProducts] = useState(true);
   const [products, setProducts] = useState([]);
   const [cost, setCost] = useState({});
+  const [checkoutURL, setCheckoutURL] = useState({});
   const { cartId, setCartId } = useAppContext();
 
   useEffect(async () => {
-    const localCart = 'gid://shopify/Cart/15854b674a05875df51a6f8d0bd8dfbf';
+    const localCart = cartId;
 
     if (localCart === null) {
       setShowProducts(false);
@@ -33,21 +34,21 @@ export default function Cart() {
         headers: { "Content-Type": "application/json" },
       });
 
-      const jsonCheck = await checkoutResponse.json();
+      const jsonCheckoutURL = await checkoutResponse.json();
       const json = await response.json();
 
       console.log('checkout resp', checkoutResponse);
-      console.log('checkout resp', jsonCheck);
+      console.log('checkout resp', jsonCheckoutURL);
 
       console.log('resp', response);
       console.log('resp', json);
 
       console.log(localCart);
 
-
+      setCheckoutURL(jsonCheckoutURL?.cart?.checkoutUrl);
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
-      return json;
+      return [json, jsonCheckoutURL];
     }
   }, []);
 
@@ -61,6 +62,7 @@ export default function Cart() {
             removeItem={setProducts}
           />
           <CartTotal cost={cost} />
+          <a href={checkoutURL}>Go to checkout</a>
         </div>
       ) : (
         <div className="cart-page-message">
