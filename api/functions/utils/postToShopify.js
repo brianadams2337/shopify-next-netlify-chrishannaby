@@ -5,6 +5,8 @@ exports.postToShopify = async ({ query, variables }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Access-Control-Allow-Credentials" : true, 
         "X-Shopify-Storefront-Access-Token":
           process.env.SHOPIFY_STOREFRONT_API_TOKEN,
       },

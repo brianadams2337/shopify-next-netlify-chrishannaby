@@ -39,7 +39,7 @@ export default function Cart() {
 
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
-      return json;
+      return [json, ];
     }
   }, []);
 
