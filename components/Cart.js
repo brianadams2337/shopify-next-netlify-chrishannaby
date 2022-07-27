@@ -28,15 +28,11 @@ export default function Cart() {
         body: JSON.stringify({
           cartId: localCart,
         }),
-        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin" : "*",
-"Access-Control-Allow-Credentials" : true },
+        headers: { "Content-Type": "application/json" },
       });
+      console.log('checkout resp', checkresponse.cart.checkoutUrl);
+
       const json = await response.json();
-      console.log('checkout resp', checkresponse);
-      console.log('cart resp', response);
-      console.log('cart json', json);
-      const jsoncheckout = await checkresponse.json();
-      console.log('checkout json', jsoncheckout);
 
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
