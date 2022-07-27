@@ -410,6 +410,15 @@ main {
   place-content: center;
 }
 
+.container-cart {
+  overflow: hidden;
+}
+
+.cart-page a.checkout.cta {
+  float: right;
+  margin-top: 30px;
+}
+
 /** Algolia overwrites **/
 
 #algoliaSearchBox {

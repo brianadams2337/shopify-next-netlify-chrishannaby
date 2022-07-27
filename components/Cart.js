@@ -54,7 +54,7 @@ export default function Cart() {
   }, []);
 
   return (
-    <div>
+    <div className="container-cart">
       {showProducts && products?.length > 0 ? (
         <div>
           <CartTable
@@ -64,15 +64,14 @@ export default function Cart() {
           />
           <CartTotal cost={cost} />
           <Link href={checkoutURL}>
-            <a>
+            <a className="checkout cta">
               <button>Go to checkout</button>
             </a>
           </Link>
-          <a href={checkoutURL}>Go to checkout</a>
         </div>
       ) : (
         <div className="cart-page-message">
-          No products to show! Get shopping!
+          Your Cart is empty.
         </div>
       )}
     </div>
