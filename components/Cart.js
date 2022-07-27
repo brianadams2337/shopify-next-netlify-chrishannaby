@@ -30,8 +30,9 @@ export default function Cart() {
         }),
         headers: { "Content-Type": "application/json" },
       });
+      console.log('checkout resp', checkresponse);
       const jsoncheckout = await checkresponse.json();
-      console.log('checkout', jsoncheckout);
+      console.log('checkout json', jsoncheckout);
 
       const json = await response.json();
       setProducts(json?.cart?.lines.edges);
