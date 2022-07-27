@@ -65,7 +65,7 @@ export default function Cart() {
           <CartTotal cost={cost} />
           <Link href={checkoutURL}>
             <a className="checkout cta">
-              <button>Go to checkout</button>
+              <button>Go To Checkout {`>`}</button>
             </a>
           </Link>
         </div>
