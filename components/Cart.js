@@ -10,7 +10,7 @@ export default function Cart() {
   const { cartId, setCartId } = useAppContext();
 
   useEffect(async () => {
-    const localCart = cartId;
+    const localCart = 'gid://shopify/Cart/15854b674a05875df51a6f8d0bd8dfbf';
 
     if (localCart === null) {
       setShowProducts(false);
@@ -32,20 +32,22 @@ export default function Cart() {
         }),
         headers: { "Content-Type": "application/json" },
       });
-      console.log('checkout resp', checkoutResponse);
-      console.log('checkout resp', checkoutResponse.data);
-      console.log('checkout resp', checkoutResponse.body);
-      console.log('resp', response);
-      console.log('resp', response.data);
-      console.log('resp', response.body);
-      console.log(localCart);
-
 
       const jsonCheck = await checkoutResponse.json();
       const json = await response.json();
+
+      console.log('checkout resp', checkoutResponse);
+      console.log('checkout resp', jsonCheck);
+
+      console.log('resp', response);
+      console.log('resp', json);
+
+      console.log(localCart);
+
+
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
-      return [json, jsonCheck];
+      return json;
     }
   }, []);
 
