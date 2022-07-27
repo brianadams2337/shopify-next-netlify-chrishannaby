@@ -23,22 +23,25 @@ export default function Cart() {
         }),
         headers: { "Content-Type": "application/json" },
       });
-      const checkresponse = await fetch("/.netlify/functions/get-checkout", {
+
+
+      const checkoutResponse = await fetch("/.netlify/functions/get-checkout", {
         method: "post",
         body: JSON.stringify({
           cartId: localCart,
         }),
         headers: { "Content-Type": "application/json" },
       });
-      console.log('checkout resp', checkresponse);
-      console.log('checkout resp', checkresponse.data);
-      console.log('checkout resp', checkresponse.body);
+      console.log('checkout resp', checkoutResponse);
+      console.log('checkout resp', checkoutResponse.data);
+      console.log('checkout resp', checkoutResponse.body);
       console.log('resp', response);
       console.log('resp', response.data);
       console.log('resp', response.body);
+      console.log(localCart);
+
 
       const json = await response.json();
-
       setProducts(json?.cart?.lines.edges);
       setCost(json?.cart?.estimatedCost);
       return [json, ];
