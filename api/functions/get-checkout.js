@@ -34,6 +34,9 @@ exports.handler = async (event) => {
           }
         }
        `,
+       variables: {
+         cartId,
+       },
     });
 
     return {
