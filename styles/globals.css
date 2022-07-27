@@ -140,6 +140,7 @@ input {
 }
 .main-nav-item a {
   color: #000;
+  text-decoration: none;
 }
 .main-nav-item a:hover {
   color: #d96528;
